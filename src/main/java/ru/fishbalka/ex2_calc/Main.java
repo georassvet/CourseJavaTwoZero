@@ -37,5 +37,6 @@ public class Main {
 
             System.out.printf("%.4f %s %.4f = %.4f\n", num1, oper, num2, result);
         } while (true);
+        sc.close();
     }
 }
