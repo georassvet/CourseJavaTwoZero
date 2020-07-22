@@ -1,0 +1,247 @@
+Action()
+{
+
+	web_set_sockets_option("SSL_VERSION", "AUTO");
+
+	web_add_header("Sec-Fetch-Mode",
+		"no-cors");
+
+	web_add_header("Sec-Fetch-Dest",
+		"empty");
+
+	web_add_header("A-IM",
+		"x-bm,gzip");
+
+	web_add_auto_header("Sec-Fetch-Site",
+		"none");
+
+	web_url("seed",
+		"URL=https://clientservices.googleapis.com/chrome-variations/seed?osname=win&channel=stable&milestone=83",
+		"Resource=0",
+		"Referer=",
+		"Snapshot=t1.inf",
+		"Mode=HTML",
+		LAST);
+
+	web_add_auto_header("Sec-Fetch-Dest",
+		"document");
+
+	web_add_auto_header("Sec-Fetch-Mode",
+		"navigate");
+
+	web_add_header("Upgrade-Insecure-Requests",
+		"1");
+
+	lr_think_time(15);
+
+/*Correlation comment - Do not change!  Original value='129179.170676387zzttzfDpfQVzzzzHDQizHpQcVff' Name ='userSession' Type ='ResponseBased'*/
+	web_reg_save_param_attrib(
+		"ParamName=userSession",
+		"TagName=input",
+		"Extract=value",
+		"Name=userSession",
+		"Type=hidden",
+		SEARCH_FILTERS,
+		"IgnoreRedirections=No",
+		"RequestUrl=*/nav.pl*",
+		LAST);
+
+	web_url("WebTours",
+		"URL=http://192.168.1.48:1080/WebTours/",
+		"Resource=0",
+		"RecContentType=text/html",
+		"Referer=",
+		"Snapshot=t2.inf",
+		"Mode=HTML",
+		EXTRARES,
+		"Url=https://ssl.gstatic.com/safebrowsing/csd/client_model_v5_ext_variation_0.pb", "Referer=", ENDITEM,
+		"Url=https://ssl.gstatic.com/safebrowsing/csd/client_model_v5_variation_0.pb", "Referer=", ENDITEM,
+		"Url=https://content-autofill.googleapis.com/v1/pages/Chc2LjEuMTcxNS4xNDQyL2VuIChHR0xMKRIlCU35IjnBRbgwEgsN541ADhIAGgAiABILDc5BTHoSABoAIgAaAA==?alt=proto", "Referer=", ENDITEM,
+		LAST);
+
+	web_add_auto_header("Sec-Fetch-Mode",
+		"no-cors");
+
+	web_add_auto_header("Sec-Fetch-Dest",
+		"empty");
+
+	web_add_header("X-Goog-Update-AppId",
+		"ihnlcenocehgdaegdmhbidjhnhdchfmm,oimompecagnajdejgnnjijobebaeigek,mimojjlkmoijpicakmndhoigimigcmbb,gcmjkmgdlgnkkcocmoeiminaijmmjnii,llkgjffcdpffmhiakmfcdcblohccpfmo,hnimpnehoodheedghdeeijklkeaacbdc,hfnkpimlhhgieaddgfemjhofmfblmnib,aemomkdncapdnfajjbbcbdebjljbpmpj,khaoiebndkojlmppeemjhbpbandiljpe,giekcmmlnklenlaomppkphknjmnnpneh,copjbmjbojbakpaedmpkhmiplmmehfck,gkmgaooipdjhmangpemjhigmamcehddo,jflookgnkcckhobaglndicnbbgbonegd,ggkkehgbnfjpeggfpleeakpidbkibbmn,bklopemakmnopmghhmccadeonafabnal,"
+		"ehgidpndbllacpjalkiimkbadgjfnnmc");
+
+	web_add_header("X-Goog-Update-Interactivity",
+		"bg");
+
+	web_add_header("X-Goog-Update-Updater",
+		"chrome-83.0.4103.116");
+
+	lr_think_time(8);
+
+	web_custom_request("json",
+		"URL=https://update.googleapis.com/service/update2/json?cup2key=10:3487697303&cup2hreq=5bc30a6cc5b976795bd461b3564b7c99666b641497412bc8db9ea9b7d29ae8f5",
+		"Method=POST",
+		"Resource=0",
+		"RecContentType=application/json",
+		"Referer=",
+		"Snapshot=t3.inf",
+		"Mode=HTML",
+		"EncType=application/json",
+		"Body={\"request\":{\"@os\":\"win\",\"@updater\":\"chrome\",\"acceptformat\":\"crx2,crx3\",\"app\":[{\"appid\":\"ihnlcenocehgdaegdmhbidjhnhdchfmm\",\"brand\":\"GGLS\",\"enabled\":true,\"ping\":{\"ping_freshness\":\"{62487d73-2c5c-43f7-873b-9a0ac1ce6a6e}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"0.0.0.0\"},{\"appid\":\"oimompecagnajdejgnnjijobebaeigek\",\"brand\":\"GGLS\",\"enabled\":true,\"ping\":{\"ping_freshness\":\"{a87bb01d-f741-46c5-a645-75aed3d85dff}\",\"rd\":4942},\"updatecheck\":{},\""
+		"version\":\"4.10.1679.0\"},{\"appid\":\"mimojjlkmoijpicakmndhoigimigcmbb\",\"brand\":\"GGLS\",\"cohort\":\"1:d0j:\",\"cohorthint\":\"Chrome [M50+]\",\"cohortname\":\"Chrome [M50+]\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\"1.8962baf052b75de7e61b9e134a6d48c4c269a48c1249d16747f2f608c73bcf90\"}]},\"ping\":{\"ping_freshness\":\"{88627a2b-2bc7-428e-9581-c76e3d9582fc}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"32.0.0.387\"},{\"appid\":\"gcmjkmgdlgnkkcocmoeiminaijmmjnii\",\"brand\":\""
+		"GGLS\",\"cohort\":\"1:bm1:vs3@0.01,vux@0.1\",\"cohorthint\":\"M54ToM99\",\"cohortname\":\"M54ToM99\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\"1.97988718faca3fd8cad05b90f3627c0db65f5a46dfaeda169eaef2eb7e8a96ce\"}]},\"ping\":{\"ping_freshness\":\"{3c42c6a6-6ab7-48fd-95f6-ce6a9705f98e}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"9.13.0\"},{\"appid\":\"llkgjffcdpffmhiakmfcdcblohccpfmo\",\"brand\":\"GGLS\",\"enabled\":true,\"ping\":{\"ping_freshness\":\""
+		"{60ec56bf-91f6-42a6-8c9c-c999451ddc30}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"0.0.0.0\"},{\"appid\":\"hnimpnehoodheedghdeeijklkeaacbdc\",\"brand\":\"GGLS\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\"1.6f6bc93dcd62dc251850d2ff458fda96083ceb7fbe8eeb11248b8485ef2aea23\"}]},\"ping\":{\"ping_freshness\":\"{a417e50d-9473-47a1-ad61-bac8c7521e7e}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"0.57.44.2492\"},{\"appid\":\"hfnkpimlhhgieaddgfemjhofmfblmnib\",\"brand\":\"GGLS\",\"cohort\""
+		":\"1:jcl:\",\"cohorthint\":\"Auto\",\"cohortname\":\"Auto\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\"1.8f4f3769e4fe5a7ef02595ed1e7a1a2ad22bf05668ccfbade171428d7ca03f9a\"}]},\"ping\":{\"ping_freshness\":\"{c519983c-0b6f-4bc1-93a3-1291c0924c28}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"5992\"},{\"appid\":\"aemomkdncapdnfajjbbcbdebjljbpmpj\",\"brand\":\"GGLS\",\"enabled\":true,\"ping\":{\"ping_freshness\":\"{62b7663f-a7d3-4eab-bba9-a812d1449f27}\",\"rd\":4942},\"updatecheck\":{},\""
+		"version\":\"1.0.5.0\"},{\"appid\":\"khaoiebndkojlmppeemjhbpbandiljpe\",\"brand\":\"GGLS\",\"cohort\":\"1:cux:\",\"cohorthint\":\"Auto\",\"cohortname\":\"Auto\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\"1.5cb8df53fe2b86bf838ea2c9ffc3d5ef8460f679a779ac8aa924b5afffd052cb\"}]},\"ping\":{\"ping_freshness\":\"{434b0dbb-0e44-4270-abc3-51eee2191a9e}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"42\"},{\"appid\":\"giekcmmlnklenlaomppkphknjmnnpneh\",\"brand\":\"GGLS\",\"cohort\":\"1:j5l:\",\""
+		"cohorthint\":\"Auto\",\"cohortname\":\"Auto\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\"1.3eb16d6c28b502ac4cfee8f4a148df05f4d93229fa36a71db8b08d06329ff18a\"}]},\"ping\":{\"ping_freshness\":\"{a846e1d9-6ed1-46e2-94af-b13e19cc6196}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"7\"},{\"appid\":\"copjbmjbojbakpaedmpkhmiplmmehfck\",\"brand\":\"GGLS\",\"cohort\":\"1:p1x:\",\"cohorthint\":\"Auto\",\"cohortname\":\"Auto\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\""
+		"1.207921137eee9c0831e0bd890330986c10dfd9382034491b82de3f86ae6915f7\"}]},\"ping\":{\"ping_freshness\":\"{8253d16a-3685-4963-800a-1381a224eab1}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"2018.9.6.0\"},{\"appid\":\"gkmgaooipdjhmangpemjhigmamcehddo\",\"brand\":\"GGLS\",\"cohort\":\"1:pw3:\",\"cohorthint\":\"Stable\",\"cohortname\":\"Stable\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\"1.86d4ab947598b4c1e45ab37df6055bf0ade111d5a4cc8f3cf076674a8636078e\"}]},\"ping\":{\"ping_freshness\":\""
+		"{513b9feb-a72a-4e20-9281-dd52d8b3fdca}\",\"rd\":4942},\"tag\":\"eset_exp_b\",\"updatecheck\":{},\"version\":\"83.238.200\"},{\"appid\":\"jflookgnkcckhobaglndicnbbgbonegd\",\"brand\":\"GGLS\",\"cohort\":\"1:s7x:\",\"cohorthint\":\"Auto\",\"cohortname\":\"Auto\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\"1.70832146d9f0cc3442a6815b2a2a15ff839ea774d463ed2098c1b024a386f51e\"}]},\"ping\":{\"ping_freshness\":\"{ad247d98-6f16-48e8-b011-3590d6f2df93}\",\"rd\":4942},\"updatecheck\":{},\"version\""
+		":\"1725\"},{\"appid\":\"ggkkehgbnfjpeggfpleeakpidbkibbmn\",\"brand\":\"GGLS\",\"cohort\":\"1:ut9:vy9@0.01\",\"cohorthint\":\"M80ToM89\",\"cohortname\":\"M80ToM89\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\"1.f5207031f5d36eaefe016b5c44637b4fc87971bd530d0ce6c9f4e0a5a7da0c9c\"}]},\"ping\":{\"ping_freshness\":\"{eb4476d1-9788-48bc-926d-e59b2122ac75}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"2020.7.6.1141\"},{\"appid\":\"bklopemakmnopmghhmccadeonafabnal\",\"brand\":\"GGLS\",\"cohort\""
+		":\"1:swl:\",\"cohorthint\":\"Auto\",\"cohortname\":\"Auto\",\"enabled\":true,\"packages\":{\"package\":[{\"fp\":\"1.6dce22b9a11fa1e62b22559c4a157ce745e7fc63c6c6941a82cf11e8ecf65b0e\"}]},\"ping\":{\"ping_freshness\":\"{002baaf4-bc7d-4d4b-9edd-3077daca0e36}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"3\"},{\"appid\":\"ehgidpndbllacpjalkiimkbadgjfnnmc\",\"brand\":\"GGLS\",\"cohort\":\"1:ofl:\",\"cohorthint\":\"stable64\",\"cohortname\":\"stable64\",\"enabled\":true,\"packages\":{\"package\":[{\""
+		"fp\":\"1.a8a79d350c2a5e3bc36226633a8e0bed0dfab184e77f38fc8f0820ebacf8eafc\"}]},\"ping\":{\"ping_freshness\":\"{6923d702-4682-4800-8508-85809d8e6ffc}\",\"rd\":4942},\"updatecheck\":{},\"version\":\"2018.8.8.0\"}],\"arch\":\"x64\",\"dedup\":\"cr\",\"domainjoined\":false,\"hw\":{\"physmemory\":4},\"lang\":\"ru\",\"nacl_arch\":\"x86-64\",\"os\":{\"arch\":\"x86_64\",\"platform\":\"Windows\",\"version\":\"10.0.18363.900\"},\"prodversion\":\"83.0.4103.116\",\"protocol\":\"3.1\",\"requestid\":\""
+		"{53088c6f-b6cd-4ffe-af60-a888f33f18ae}\",\"sessionid\":\"{c97ada48-361d-4915-93d4-2963489f2a43}\",\"updater\":{\"autoupdatecheckenabled\":true,\"ismachine\":true,\"lastchecked\":0,\"laststarted\":0,\"name\":\"Omaha\",\"updatepolicy\":-1,\"version\":\"1.3.35.452\"},\"updaterversion\":\"83.0.4103.116\"}}",
+		LAST);
+
+	web_add_auto_header("Sec-Fetch-Mode",
+		"navigate");
+
+	web_add_auto_header("Sec-Fetch-Dest",
+		"frame");
+
+	web_add_header("Origin",
+		"http://192.168.1.48:1080");
+
+	web_add_auto_header("Sec-Fetch-Site",
+		"same-origin");
+
+	web_add_auto_header("Sec-Fetch-User",
+		"?1");
+
+	web_add_auto_header("Upgrade-Insecure-Requests",
+		"1");
+
+	lr_think_time(20);
+
+	web_submit_data("login.pl",
+		"Action=http://192.168.1.48:1080/cgi-bin/login.pl",
+		"Method=POST",
+		"RecContentType=text/html",
+		"Referer=http://192.168.1.48:1080/cgi-bin/nav.pl?in=home",
+		"Snapshot=t4.inf",
+		"Mode=HTML",
+		ITEMDATA,
+		"Name=userSession", "Value={userSession}", ENDITEM,
+		"Name=username", "Value={Username}", ENDITEM,
+		"Name=password", "Value={Password}", ENDITEM,
+		"Name=login.x", "Value=29", ENDITEM,
+		"Name=login.y", "Value=19", ENDITEM,
+		"Name=JSFormSubmit", "Value=off", ENDITEM,
+		LAST);
+
+	web_revert_auto_header("Sec-Fetch-User");
+
+	web_revert_auto_header("Upgrade-Insecure-Requests");
+
+	lr_think_time(19);
+
+	web_image("Search Flights Button",
+		"Alt=Search Flights Button",
+		"Snapshot=t5.inf",
+		EXTRARES,
+		"Url=https://safebrowsing.googleapis.com/v4/threatListUpdates_fetch?$req="
+		"Ch0KDGdvb2dsZWNocm9tZRINODMuMC40MTAzLjExNhopCAUQARobCg0IBRAGGAEiAzAwMTABEJn2CBoCGAseiw8pIgQgASACKAEaKQgBEAEaGwoNCAEQBhgBIgMwMDEwARC-0AcaAhgLzfMtuyIEIAEgAigBGikIAxABGhsKDQgDEAYYASIDMDAxMAEQ69cHGgIYC4UT5rciBCABIAIoARopCAcQARobCg0IBxAGGAEiAzAwMTABEPrgBxoCGAvix5e2IgQgASACKAEaJwgBEAEaGQoNCAEQBhgBIgMwMDEwAxAUGgIYC_474o8iBCABIAIoAxooCAEQCBoaCg0IARAIGAEiAzAwMTAEENsaGgIYC94rDVUiBCABIAIoBBonCAkQARoZCg0ICRAGGAEiAzAwMTAGEAMaAhgLItEfZCIEIAEgAigGGigIDxABGhoKDQgPEAYYASIDMDAxMAEQwTMaAhgL4cCXHyIEIAEgAigBGicIChAIGh"
+		"kKDQgKEAgYASIDMDAxMAEQBhoCGAsi7f5dIgQgASACKAEaJwgJEAEaGQoNCAkQBhgBIgMwMDEwARAcGgIYC0DWe9MiBCABIAIoARooCAgQARoaCg0ICBAGGAEiAzAwMTABEKwJGgIYCwld9HEiBCABIAIoARooCA0QARoaCg0IDRAGGAEiAzAwMTABEM92GgIYC_6jxjAiBCABIAIoARopCA4QARobCg0IDhAGGAEiAzAwMTABEM73AxoCGAvnMJgaIgQgASACKAEaKAgQEAEaGgoNCBAQBhgBIgMwMDEwARCuBBoCGAvOPnL7IgQgASACKAEiAggB&$ct=application/x-protobuf&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw", "Referer=", ENDITEM,
+		LAST);
+
+	web_add_auto_header("Origin",
+		"http://192.168.1.48:1080");
+
+	web_add_auto_header("Sec-Fetch-User",
+		"?1");
+
+	web_add_auto_header("Upgrade-Insecure-Requests",
+		"1");
+
+
+/*Correlation comment - Do not change!  Original value='021;301;07/15/2020' Name ='outboundFlight' Type ='ResponseBased'*/
+/*	web_reg_save_param_attrib(
+		"ParamName=outboundFlight",
+		"TagName=input",
+		"Extract=value",
+		"Name=outboundFlight",
+		"Type=radio",
+		SEARCH_FILTERS,
+		"IgnoreRedirections=No",
+		LAST);
+	*/
+	web_reg_save_param_ex(
+		"ParamName=Body",
+		SEARCH_FILTERS,
+		"Scope=Body",
+		LAST);
+
+
+	web_submit_form("reservations.pl",
+		"Snapshot=t6.inf",
+		ITEMDATA,
+		"Name=depart", "Value={DepartureCity}", ENDITEM,
+		"Name=departDate", "Value={DepartureDate}", ENDITEM,
+		"Name=arrive", "Value={ArriveCity}", ENDITEM,
+		"Name=returnDate", "Value={ReturnDate}", ENDITEM,
+		"Name=numPassengers", "Value=1", ENDITEM,
+		"Name=roundtrip", "Value=<OFF>", ENDITEM,
+		"Name=seatPref", "Value=None", ENDITEM,
+		"Name=seatType", "Value=Coach", ENDITEM,
+		LAST);
+
+	lr_think_time(22);
+
+	web_submit_form("reservations.pl_2",
+		"Snapshot=t7.inf",
+		ITEMDATA,
+		"Name=outboundFlight", "Value={outboundFlight}", ENDITEM,
+		"Name=reserveFlights.x", "Value=23", ENDITEM,
+		"Name=reserveFlights.y", "Value=13", ENDITEM,
+		LAST);
+
+	web_revert_auto_header("Origin");
+
+	web_revert_auto_header("Sec-Fetch-User");
+
+	web_revert_auto_header("Upgrade-Insecure-Requests");
+
+	web_add_header("Origin",
+		"http://localhost:1080");
+
+	web_add_auto_header("Sec-Fetch-User",
+		"?1");
+
+	web_add_auto_header("Upgrade-Insecure-Requests",
+		"1");
+
+	lr_think_time(38);
+
+	web_submit_form("reservations.pl_3",
+		"Snapshot=t8.inf",
+		ITEMDATA,
+		"Name=firstName", "Value={Username}", ENDITEM,
+		"Name=lastName", "Value=Bean", ENDITEM,
+		"Name=address1", "Value=", ENDITEM,
+		"Name=address2", "Value=", ENDITEM,
+		"Name=pass1", "Value={Username} Bean", ENDITEM,
+		"Name=creditCard", "Value=123214214", ENDITEM,
+		"Name=expDate", "Value=07/21", ENDITEM,
+		"Name=saveCC", "Value=<OFF>", ENDITEM,
+		LAST);
+
+	web_revert_auto_header("Sec-Fetch-User");
+
+	lr_think_time(23);
+
+	web_image("SignOff Button",
+		"Alt=SignOff Button",
+		"Ordinal=1",
+		"Snapshot=t9.inf",
+		LAST);
+
+	return 0;
+}
