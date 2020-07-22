@@ -12,24 +12,37 @@ public class Main {
         printArr(arr);
     }
 
+
+    // TEST:
+    //-19 16 -18 -13 11 -8 -18 -18 19 18 7 0 5 -5 19 12 -3 -20 -18 -19
+    //-19 16 -18 -13 11 -8 -18 -18 19 18 7 -3 5 -5 19 12 0 -20 -18 -19
+
     public static int[] replaceMinMax(int[] arr) {
-        int minIndex = 0;
-        int maxIndex = 0;
+        int minPosIndex = -1;
+        int maxNegIndex = -1;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > arr[maxIndex]) {
-                maxIndex = i;
-                continue;
-            }
-            if (arr[i] < arr[minIndex]) {
-                minIndex = i;
-                continue;
+            if (arr[i] >= 0) {
+                if (minPosIndex == -1) {
+                    minPosIndex = i;
+                } else {
+                    if (arr[i] < arr[minPosIndex]) {
+                        minPosIndex = i;
+                    }
+                }
+            } else {
+                if (maxNegIndex == -1) {
+                    maxNegIndex = i;
+                } else {
+                    if (arr[i] > arr[maxNegIndex]) {
+                        maxNegIndex = i;
+                    }
+                }
             }
         }
-        if (minIndex != maxIndex) {
-            int x = arr[minIndex];
-            arr[minIndex] = arr[maxIndex];
-            arr[maxIndex] = x;
-        }
+        int temp = arr[minPosIndex];
+        arr[minPosIndex] = arr[maxNegIndex];
+        arr[maxNegIndex] = temp;
+
         return arr;
     }
 

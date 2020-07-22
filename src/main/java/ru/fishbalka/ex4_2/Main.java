@@ -28,7 +28,5 @@ public class Main {
         System.out.println(happyMeal.getName()
                 + ". Вес:" + happyMeal.getWeight()
                 + "грамм. Стоимость:" + happyMeal.getCost()+ " руб.");
-
-
     }
 }
